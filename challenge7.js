@@ -99,7 +99,6 @@ const dict = {
 }
 
 
-
 let myStr = 'Hi, Ed!';
 
 function encrypt(word, offset){
