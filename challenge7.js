@@ -100,36 +100,21 @@ const dict = {
 
 
 
-
-
-
-
-
-
-
-
 let myStr = 'Hi, Ed!';
 
 function encrypt(word, offset){
     let finalString = '';
     for (let i = 0; i < word.length; i++) {
-        let number = dict[word[i];
+        let number = dict[word[i]];
         number += offset;
-        if (number > 100) {
-            number %= 100;
+        number %= 100;
+        if (number <= 9) {
+           finalString += '0';
         }
+        finalString += number;
 
-
-        finalString += dict[word[i]];
-
-
-        for (let key in dict) {
-            if (unencryptedString[i] === key) {
-                finalString += dict[key];
-            }
-        }
     }
     console.log(finalString);
 }
 
-encrypt(myStr);
+encrypt(myStr, 302);
